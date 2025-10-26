@@ -246,7 +246,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(520, 739);
+            ClientSize = new Size(495, 739);
             Controls.Add(gbConsulta);
             Controls.Add(gbRepuesto);
             Name = "frmRepuestos";
