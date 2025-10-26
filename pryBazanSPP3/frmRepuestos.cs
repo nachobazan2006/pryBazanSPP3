@@ -43,7 +43,7 @@ namespace pryBazanSPP3
                 return;
             }
             // obtener y validar datos
-            char Marca = char.ToUpper(cmbMarca.Text[0]);
+            char Marca = char.ToUpper(cmbMarca.Text[0]); //.ToUpper para asegurar mayúscula
             char origen = char.ToUpper(cmbOrigen.Text[0]);
             string descripcion = txtDescripcion.Text ?? "";
             float precio;
