@@ -29,33 +29,32 @@
         private void InitializeComponent()
         {
             gbRepuesto = new GroupBox();
-            lblMarca = new Label();
-            lblOrigen = new Label();
-            lblNumero = new Label();
-            lblDescripcion = new Label();
-            lblPrecio = new Label();
-            btnGrabar = new Button();
-            gbConsulta = new GroupBox();
-            lstConsulta = new ListBox();
-            lblMarcaConsulta = new Label();
-            rbNacional = new RadioButton();
-            rbImportado = new RadioButton();
-            cmbMarca = new ComboBox();
-            cmbOrigen = new ComboBox();
-            NupNúmero = new NumericUpDown();
+            txtPrecio = new TextBox();
             txtDescripcion = new TextBox();
-            NupPrecio = new NumericUpDown();
-            cmbMarcaConsulta = new ComboBox();
+            NupNúmero = new NumericUpDown();
+            cmbOrigen = new ComboBox();
+            cmbMarca = new ComboBox();
+            btnGrabar = new Button();
+            lblPrecio = new Label();
+            lblDescripcion = new Label();
+            lblNumero = new Label();
+            lblOrigen = new Label();
+            lblMarca = new Label();
+            gbConsulta = new GroupBox();
             btnBuscar = new Button();
+            cmbMarcaConsulta = new ComboBox();
+            rbImportado = new RadioButton();
+            rbNacional = new RadioButton();
+            lblMarcaConsulta = new Label();
+            lstConsulta = new ListBox();
             gbRepuesto.SuspendLayout();
-            gbConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)NupNúmero).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)NupPrecio).BeginInit();
+            gbConsulta.SuspendLayout();
             SuspendLayout();
             // 
             // gbRepuesto
             // 
-            gbRepuesto.Controls.Add(NupPrecio);
+            gbRepuesto.Controls.Add(txtPrecio);
             gbRepuesto.Controls.Add(txtDescripcion);
             gbRepuesto.Controls.Add(NupNúmero);
             gbRepuesto.Controls.Add(cmbOrigen);
@@ -73,41 +72,58 @@
             gbRepuesto.TabStop = false;
             gbRepuesto.Text = "Repuesto";
             // 
-            // lblMarca
+            // txtPrecio
             // 
-            lblMarca.AutoSize = true;
-            lblMarca.Location = new Point(29, 55);
-            lblMarca.Name = "lblMarca";
-            lblMarca.Size = new Size(40, 15);
-            lblMarca.TabIndex = 0;
-            lblMarca.Text = "Marca";
+            txtPrecio.Location = new Point(111, 259);
+            txtPrecio.Name = "txtPrecio";
+            txtPrecio.Size = new Size(228, 23);
+            txtPrecio.TabIndex = 9;
+            txtPrecio.TextChanged += textBox1_TextChanged;
             // 
-            // lblOrigen
+            // txtDescripcion
             // 
-            lblOrigen.AutoSize = true;
-            lblOrigen.Location = new Point(29, 104);
-            lblOrigen.Name = "lblOrigen";
-            lblOrigen.Size = new Size(43, 15);
-            lblOrigen.TabIndex = 1;
-            lblOrigen.Text = "Origen";
+            txtDescripcion.Location = new Point(111, 210);
+            txtDescripcion.MaxLength = 50;
+            txtDescripcion.Name = "txtDescripcion";
+            txtDescripcion.Size = new Size(228, 23);
+            txtDescripcion.TabIndex = 8;
             // 
-            // lblNumero
+            // NupNúmero
             // 
-            lblNumero.AutoSize = true;
-            lblNumero.Location = new Point(29, 157);
-            lblNumero.Name = "lblNumero";
-            lblNumero.Size = new Size(51, 15);
-            lblNumero.TabIndex = 2;
-            lblNumero.Text = "Número";
+            NupNúmero.Increment = new decimal(new int[] { 0, 0, 0, 0 });
+            NupNúmero.Location = new Point(111, 157);
+            NupNúmero.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
+            NupNúmero.Name = "NupNúmero";
+            NupNúmero.Size = new Size(221, 23);
+            NupNúmero.TabIndex = 7;
             // 
-            // lblDescripcion
+            // cmbOrigen
             // 
-            lblDescripcion.AutoSize = true;
-            lblDescripcion.Location = new Point(29, 210);
-            lblDescripcion.Name = "lblDescripcion";
-            lblDescripcion.Size = new Size(69, 15);
-            lblDescripcion.TabIndex = 3;
-            lblDescripcion.Text = "Descripción";
+            cmbOrigen.FormattingEnabled = true;
+            cmbOrigen.Items.AddRange(new object[] { "N", "I" });
+            cmbOrigen.Location = new Point(111, 104);
+            cmbOrigen.Name = "cmbOrigen";
+            cmbOrigen.Size = new Size(221, 23);
+            cmbOrigen.TabIndex = 6;
+            // 
+            // cmbMarca
+            // 
+            cmbMarca.FormattingEnabled = true;
+            cmbMarca.Items.AddRange(new object[] { "P", "F", "R" });
+            cmbMarca.Location = new Point(111, 55);
+            cmbMarca.Name = "cmbMarca";
+            cmbMarca.Size = new Size(221, 23);
+            cmbMarca.TabIndex = 4;
+            // 
+            // btnGrabar
+            // 
+            btnGrabar.Location = new Point(231, 315);
+            btnGrabar.Name = "btnGrabar";
+            btnGrabar.Size = new Size(101, 33);
+            btnGrabar.TabIndex = 5;
+            btnGrabar.Text = "Grabar";
+            btnGrabar.UseVisualStyleBackColor = true;
+            btnGrabar.Click += btnGrabar_Click;
             // 
             // lblPrecio
             // 
@@ -118,14 +134,41 @@
             lblPrecio.TabIndex = 4;
             lblPrecio.Text = "Precio";
             // 
-            // btnGrabar
+            // lblDescripcion
             // 
-            btnGrabar.Location = new Point(231, 315);
-            btnGrabar.Name = "btnGrabar";
-            btnGrabar.Size = new Size(101, 33);
-            btnGrabar.TabIndex = 5;
-            btnGrabar.Text = "Grabar";
-            btnGrabar.UseVisualStyleBackColor = true;
+            lblDescripcion.AutoSize = true;
+            lblDescripcion.Location = new Point(29, 210);
+            lblDescripcion.Name = "lblDescripcion";
+            lblDescripcion.Size = new Size(69, 15);
+            lblDescripcion.TabIndex = 3;
+            lblDescripcion.Text = "Descripción";
+            // 
+            // lblNumero
+            // 
+            lblNumero.AutoSize = true;
+            lblNumero.Location = new Point(29, 157);
+            lblNumero.Name = "lblNumero";
+            lblNumero.Size = new Size(51, 15);
+            lblNumero.TabIndex = 2;
+            lblNumero.Text = "Número";
+            // 
+            // lblOrigen
+            // 
+            lblOrigen.AutoSize = true;
+            lblOrigen.Location = new Point(29, 104);
+            lblOrigen.Name = "lblOrigen";
+            lblOrigen.Size = new Size(43, 15);
+            lblOrigen.TabIndex = 1;
+            lblOrigen.Text = "Origen";
+            // 
+            // lblMarca
+            // 
+            lblMarca.AutoSize = true;
+            lblMarca.Location = new Point(29, 55);
+            lblMarca.Name = "lblMarca";
+            lblMarca.Size = new Size(40, 15);
+            lblMarca.TabIndex = 0;
+            lblMarca.Text = "Marca";
             // 
             // gbConsulta
             // 
@@ -142,34 +185,24 @@
             gbConsulta.TabStop = false;
             gbConsulta.Text = "Consulta";
             // 
-            // lstConsulta
+            // btnBuscar
             // 
-            lstConsulta.FormattingEnabled = true;
-            lstConsulta.ItemHeight = 15;
-            lstConsulta.Location = new Point(18, 38);
-            lstConsulta.Name = "lstConsulta";
-            lstConsulta.Size = new Size(338, 94);
-            lstConsulta.TabIndex = 0;
+            btnBuscar.Location = new Point(231, 212);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(101, 32);
+            btnBuscar.TabIndex = 5;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
-            // lblMarcaConsulta
+            // cmbMarcaConsulta
             // 
-            lblMarcaConsulta.AutoSize = true;
-            lblMarcaConsulta.Location = new Point(18, 156);
-            lblMarcaConsulta.Name = "lblMarcaConsulta";
-            lblMarcaConsulta.Size = new Size(40, 15);
-            lblMarcaConsulta.TabIndex = 1;
-            lblMarcaConsulta.Text = "Marca";
-            // 
-            // rbNacional
-            // 
-            rbNacional.AutoSize = true;
-            rbNacional.Location = new Point(18, 190);
-            rbNacional.Name = "rbNacional";
-            rbNacional.Size = new Size(72, 19);
-            rbNacional.TabIndex = 2;
-            rbNacional.TabStop = true;
-            rbNacional.Text = "Nacional";
-            rbNacional.UseVisualStyleBackColor = true;
+            cmbMarcaConsulta.FormattingEnabled = true;
+            cmbMarcaConsulta.Items.AddRange(new object[] { "P", "F", "R" });
+            cmbMarcaConsulta.Location = new Point(93, 153);
+            cmbMarcaConsulta.Name = "cmbMarcaConsulta";
+            cmbMarcaConsulta.Size = new Size(263, 23);
+            cmbMarcaConsulta.TabIndex = 4;
             // 
             // rbImportado
             // 
@@ -182,65 +215,34 @@
             rbImportado.Text = "Importado";
             rbImportado.UseVisualStyleBackColor = true;
             // 
-            // cmbMarca
+            // rbNacional
             // 
-            cmbMarca.FormattingEnabled = true;
-            cmbMarca.Items.AddRange(new object[] { "P", "F", "R" });
-            cmbMarca.Location = new Point(111, 55);
-            cmbMarca.Name = "cmbMarca";
-            cmbMarca.Size = new Size(221, 23);
-            cmbMarca.TabIndex = 4;
+            rbNacional.AutoSize = true;
+            rbNacional.Location = new Point(18, 190);
+            rbNacional.Name = "rbNacional";
+            rbNacional.Size = new Size(72, 19);
+            rbNacional.TabIndex = 2;
+            rbNacional.TabStop = true;
+            rbNacional.Text = "Nacional";
+            rbNacional.UseVisualStyleBackColor = true;
             // 
-            // cmbOrigen
+            // lblMarcaConsulta
             // 
-            cmbOrigen.FormattingEnabled = true;
-            cmbOrigen.Items.AddRange(new object[] { "N", "I" });
-            cmbOrigen.Location = new Point(111, 104);
-            cmbOrigen.Name = "cmbOrigen";
-            cmbOrigen.Size = new Size(221, 23);
-            cmbOrigen.TabIndex = 6;
+            lblMarcaConsulta.AutoSize = true;
+            lblMarcaConsulta.Location = new Point(18, 156);
+            lblMarcaConsulta.Name = "lblMarcaConsulta";
+            lblMarcaConsulta.Size = new Size(40, 15);
+            lblMarcaConsulta.TabIndex = 1;
+            lblMarcaConsulta.Text = "Marca";
             // 
-            // NupNúmero
+            // lstConsulta
             // 
-            NupNúmero.Location = new Point(111, 157);
-            NupNúmero.Maximum = new decimal(new int[] { 6, 0, 0, 0 });
-            NupNúmero.Name = "NupNúmero";
-            NupNúmero.Size = new Size(221, 23);
-            NupNúmero.TabIndex = 7;
-            // 
-            // txtDescripcion
-            // 
-            txtDescripcion.Location = new Point(111, 210);
-            txtDescripcion.MaxLength = 50;
-            txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(228, 23);
-            txtDescripcion.TabIndex = 8;
-            // 
-            // NupPrecio
-            // 
-            NupPrecio.DecimalPlaces = 2;
-            NupPrecio.Location = new Point(111, 262);
-            NupPrecio.Name = "NupPrecio";
-            NupPrecio.Size = new Size(228, 23);
-            NupPrecio.TabIndex = 9;
-            // 
-            // cmbMarcaConsulta
-            // 
-            cmbMarcaConsulta.FormattingEnabled = true;
-            cmbMarcaConsulta.Items.AddRange(new object[] { "P", "F", "R" });
-            cmbMarcaConsulta.Location = new Point(93, 153);
-            cmbMarcaConsulta.Name = "cmbMarcaConsulta";
-            cmbMarcaConsulta.Size = new Size(263, 23);
-            cmbMarcaConsulta.TabIndex = 4;
-            // 
-            // btnBuscar
-            // 
-            btnBuscar.Location = new Point(231, 212);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(101, 32);
-            btnBuscar.TabIndex = 5;
-            btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = true;
+            lstConsulta.FormattingEnabled = true;
+            lstConsulta.ItemHeight = 15;
+            lstConsulta.Location = new Point(18, 38);
+            lstConsulta.Name = "lstConsulta";
+            lstConsulta.Size = new Size(338, 94);
+            lstConsulta.TabIndex = 0;
             // 
             // frmRepuestos
             // 
@@ -253,10 +255,9 @@
             Text = "Repuestos";
             gbRepuesto.ResumeLayout(false);
             gbRepuesto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)NupNúmero).EndInit();
             gbConsulta.ResumeLayout(false);
             gbConsulta.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)NupNúmero).EndInit();
-            ((System.ComponentModel.ISupportInitialize)NupPrecio).EndInit();
             ResumeLayout(false);
         }
 
@@ -277,9 +278,9 @@
         private RadioButton rbNacional;
         private Label lblMarcaConsulta;
         private ListBox lstConsulta;
-        private NumericUpDown NupPrecio;
         private TextBox txtDescripcion;
         private ComboBox cmbMarcaConsulta;
         private Button btnBuscar;
+        private TextBox txtPrecio;
     }
 }
