@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRepuestos));
             gbRepuesto = new GroupBox();
             txtPrecio = new TextBox();
             txtDescripcion = new TextBox();
@@ -251,6 +252,7 @@
             ClientSize = new Size(495, 739);
             Controls.Add(gbConsulta);
             Controls.Add(gbRepuesto);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmRepuestos";
             Text = "Repuestos";
             gbRepuesto.ResumeLayout(false);
